@@ -39,12 +39,21 @@
   :group 'electricity
   :link '(url-link :tag "Repository" "https://github.com/jcs-elpa/vs-electric-spacing"))
 
+
+(defun vs-electric-spacing--char-before (&optional pos)
+  ""
+  (ignore-errors (string (char-before pos))))
+
+(defun vs-electric-spacing--char-after (&optional pos)
+  ""
+  (ignore-errors (string (char-after pos))))
+
 (defun vs-electric-spacing--post-self-insert (&rest _)
   "Hook function for `post-self-insert-hook'."
-  (let ((b-1 (string (char-before (1- (point)))))
-        (b-0 (string (char-before)))
-        (a-0 (string (char-after)))
-        (a-1 (string (char-after (1+ (point))))))
+  (when-let* ((b-1 (vs-electric-spacing--char-before (1- (point))))
+              (b-0 (vs-electric-spacing--char-before))
+              (a-0 (vs-electric-spacing--char-after))
+              (a-1 (vs-electric-spacing--char-after (1+ (point)))))
     (pcase b-0
       ("{"
        ;; Insert a space before {
