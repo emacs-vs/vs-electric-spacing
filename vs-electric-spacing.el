@@ -55,8 +55,7 @@
          (when (string= a-1 "}")
            (save-excursion
              (forward-char 1)
-             (insert " "))
-           )))
+             (insert " ")))))
       (";"
        (when (and (not (eolp))
                   (string= b-1 " ")
