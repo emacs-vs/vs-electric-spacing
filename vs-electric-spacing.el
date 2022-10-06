@@ -43,20 +43,24 @@
   "Hook function for `post-self-insert-hook'."
   (let ((b-1 (string (char-before (1- (point)))))
         (b-0 (string (char-before)))
-        (a-0 (string (char-after))))
+        (a-0 (string (char-after)))
+        (a-1 (string (char-after (1+ (point))))))
     (pcase b-0
       ("{"
+       ;; Insert a space before {
        (unless (string= b-1 " ")
          (save-excursion
            (forward-char -1)
            (insert " ")))
+       ;; Insert a space between { }
        (when (string= a-0 "}") (insert " "))
-       (let ((a-1 (string (char-after (1+ (point))))))
-         (when (string= a-1 "}")
-           (save-excursion
-             (forward-char 1)
-             (insert " ")))))
+       ;; Insert a space after }
+       (when (string= a-1 "}")
+         (save-excursion
+           (forward-char 1)
+           (insert " "))))
       (";"
+       ;; Insert a space after ; (if needed)
        (when (and (not (eolp))
                   (string= b-1 " ")
                   (not (string= a-0 " ")))
