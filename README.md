@@ -2,15 +2,17 @@
 [![JCS-ELPA](https://raw.githubusercontent.com/jcs-emacs/badges/master/elpa/v/vs-electric-spacing.svg)](https://jcs-emacs.github.io/jcs-elpa/#/vs-electric-spacing)
 
 # vs-electric-spacing
-> 
+> Add spacing around operators like Visual Studio
 
 [![CI](https://github.com/emacs-vs/vs-electric-spacing/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-vs/vs-electric-spacing/actions/workflows/test.yml)
 
 ## 🔨 Usage
 
 ```elisp
-
+(vs-electric-spacing-mode 1)
 ```
+
+Or just `M-x vs-electric-spacing-mode`.
 
 ## Contribute
 
