@@ -41,11 +41,11 @@
 
 
 (defun vs-electric-spacing--char-before (&optional pos)
-  ""
+  "Like `char-before' but return a string at POS."
   (ignore-errors (string (char-before pos))))
 
 (defun vs-electric-spacing--char-after (&optional pos)
-  ""
+  "Like `char-after' but return a string at POS."
   (ignore-errors (string (char-after pos))))
 
 (defun vs-electric-spacing--post-self-insert (&rest _)
