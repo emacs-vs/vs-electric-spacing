@@ -76,7 +76,7 @@
 ;;;###autoload
 (define-minor-mode vs-electric-spacing-mode
   "Minor mode `vs-electric-spacing-mode'."
-  :group 'electricity
+  :group 'vs-electric-spacing
   (if vs-electric-spacing-mode (vs-electric-spacing--enable) (vs-electric-spacing--disable)))
 
 (defun vs-electric-spacing--turn-on ()
