@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "vs-electric-spacing"
          "0.1.0"
          "Add spacing around operators like Visual Studio")
